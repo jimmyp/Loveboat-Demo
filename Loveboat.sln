@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loveboat", "Loveboat\Loveboat.csproj", "{2051FDF6-5540-4F33-B25E-3B3F453E64BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2051FDF6-5540-4F33-B25E-3B3F453E64BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2051FDF6-5540-4F33-B25E-3B3F453E64BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2051FDF6-5540-4F33-B25E-3B3F453E64BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2051FDF6-5540-4F33-B25E-3B3F453E64BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

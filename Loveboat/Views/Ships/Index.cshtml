@@ -1,0 +1,44 @@
+﻿@model Loveboat.Models.ShipsViewModel
+
+@{
+    ViewBag.Title = "title";
+}
+
+<table>
+    <thead>
+        <td><strong>Name</strong></td>
+        <td><strong>Location</strong></td>
+        <td></td>
+    </thead>
+    <tbody>
+        @foreach(var ship in Model.Ships)
+        {
+            <tr>
+                <td>@ship.Name</td> 
+                <td>@ship.Location</td>
+                <td>
+                @if(ship.Location == "At Sea")
+                {
+                    using (Html.BeginForm("Arrive", "Ships"))
+                    {
+                        @Html.Hidden("ArrivingShipId", ship.Id)
+                        <input type="submit" value="Arrive At"/>
+                        @Html.TextBox("ArrivalPort")
+                    }
+                }
+                else
+                {
+                    using (Html.BeginForm("Depart", "Ships"))
+                    {
+                        @Html.Hidden("DepartingShipId", ship.Id)
+                        <input type="submit" value="Depart"/>
+                    }
+                }
+                    </td>
+            </tr>
+        }   
+    </tbody>
+</table>
+
+
+
