@@ -4,6 +4,6 @@ namespace Loveboat.Models
 {
     public class ShipsViewModel
     {
-        public List<ShipViewModel> Ships { get; set; }
+        public IEnumerable<ShipViewModel> Ships { get; set; }
     }
 }
