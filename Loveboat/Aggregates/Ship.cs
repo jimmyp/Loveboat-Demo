@@ -21,7 +21,7 @@ namespace Loveboat.Aggregates
 
         public void HandleCommand(ArrivalCommand arrivalCommand)
         {
-            if (CurrentLocation != null && CurrentLocation != "At Sea")
+            if (CurrentLocation != "At Sea")
                 throw new ApplicationException();
 
             Apply(new ArrivedEvent(arrivalCommand));
@@ -37,10 +37,18 @@ namespace Loveboat.Aggregates
 
         public void HandleEvent(ArrivedEvent arrivedEvent)
         {
-            if (CurrentLocation != null && CurrentLocation != "At Sea")
+            if (CurrentLocation != "At Sea")
                 throw new ApplicationException();
 
             CurrentLocation = arrivedEvent.ArrivalPort;
+        }
+
+        public void HandleEvent(DepartedEvent departedEvent)
+        {
+            if (CurrentLocation == "At Sea")
+                throw new ApplicationException();
+
+            CurrentLocation = "At Sea";
         }
     }
 }

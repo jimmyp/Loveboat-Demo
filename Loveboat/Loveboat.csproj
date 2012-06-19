@@ -81,6 +81,7 @@
     <Compile Include="App_Start\StructuremapMvc.cs" />
     <Compile Include="CommandHandlers\ArrivalCommandHandler.cs" />
     <Compile Include="Events\ArrivedEvent.cs" />
+    <Compile Include="Events\DepartedEvent.cs" />
     <Compile Include="FakeEventStore.cs" />
     <Compile Include="Events\IEvent.cs" />
     <Compile Include="Aggregates\Ship.cs" />

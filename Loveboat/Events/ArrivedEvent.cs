@@ -17,6 +17,13 @@ namespace Loveboat.Events
             ArrivalPort = arrivalCommand.ArrivalPort;
         }
 
+        public ArrivedEvent(Guid arrivalCommand, string arrivalPort)
+        {
+            if (arrivalPort == null) throw new ArgumentNullException("arrivalPort");
+            Id = arrivalCommand;
+            ArrivalPort = arrivalPort;
+        }
+
         public void ProcessInto(Ship aggregate)
         {
             aggregate.HandleEvent(this);

@@ -31,11 +31,6 @@ namespace Loveboat.CommandHandlers
         {
             IList<IEvent<Ship>> events;
             FakeEventStore.ShipEvents.TryGetValue(id, out events);
-            if (events == null)
-            {
-                events = new List<IEvent<Ship>>();
-                FakeEventStore.ShipEvents[id] = events;
-            }
             return events;
         }
     }
