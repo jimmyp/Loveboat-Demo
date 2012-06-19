@@ -1,4 +1,4 @@
-namespace Loveboat.Commands
+namespace Loveboat
 {
     public interface ICommandProcessor
     {

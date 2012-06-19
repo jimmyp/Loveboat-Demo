@@ -1,6 +1,7 @@
+using Loveboat.CommandHandlers;
 using StructureMap;
 
-namespace Loveboat.Commands
+namespace Loveboat
 {
     public class CommandProcessor : ICommandProcessor
     {

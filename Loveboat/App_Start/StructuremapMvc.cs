@@ -1,4 +1,5 @@
 using System.Web.Mvc;
+using Loveboat.DependencyResolution;
 using StructureMap;
 
 [assembly: WebActivator.PreApplicationStartMethod(typeof(Loveboat.App_Start.StructuremapMvc), "Start")]

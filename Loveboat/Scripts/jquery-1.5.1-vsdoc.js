@@ -130,12 +130,12 @@ jQuery.fn = jQuery.prototype = {
 	init: function( selector, context ) {
 		var match, elem, ret, doc;
 
-		// Handle $(""), $(null), or $(undefined)
+		// HandleEventCommand $(""), $(null), or $(undefined)
 		if ( !selector ) {
 			return this;
 		}
 
-		// Handle $(DOMElement)
+		// HandleEventCommand $(DOMElement)
 		if ( selector.nodeType ) {
 			this.context = this[0] = selector;
 			this.length = 1;
@@ -151,7 +151,7 @@ jQuery.fn = jQuery.prototype = {
 			return this;
 		}
 
-		// Handle HTML strings
+		// HandleEventCommand HTML strings
 		if ( typeof selector === "string" ) {
 			// Are we dealing with HTML string or an ID?
 			match = quickExpr.exec( selector );
@@ -190,7 +190,7 @@ jQuery.fn = jQuery.prototype = {
 					// Check parentNode to catch when Blackberry 4.6 returns
 					// nodes that are no longer in the document #6963
 					if ( elem && elem.parentNode ) {
-						// Handle the case where IE and Opera return items
+						// HandleEventCommand the case where IE and Opera return items
 						// by name instead of ID
 						if ( elem.id !== match[2] ) {
 							return rootjQuery.find( selector );
@@ -478,7 +478,7 @@ jQuery.extend = jQuery.fn.extend = function() {
 		length = arguments.length,
 		deep = false;
 
-	// Handle a deep copy situation
+	// HandleEventCommand a deep copy situation
 	if ( typeof target === "boolean" ) {
 		deep = target;
 		target = arguments[1] || {};
@@ -486,7 +486,7 @@ jQuery.extend = jQuery.fn.extend = function() {
 		i = 2;
 	}
 
-	// Handle case when target is a string or something (possible in deep copy)
+	// HandleEventCommand case when target is a string or something (possible in deep copy)
 	if ( typeof target !== "object" && !jQuery.isFunction(target) ) {
 		target = {};
 	}
@@ -565,7 +565,7 @@ jQuery.extend({
 	// the ready event fires. See #6781
 	readyWait: 1,
 	
-	// Handle when the DOM is ready
+	// HandleEventCommand when the DOM is ready
 	ready: function( wait ) {
 		///	<summary>
 		///     &#10;This method is internal.
@@ -624,7 +624,7 @@ jQuery.extend({
 		// Catch cases where $(document).ready() is called after the
 		// browser event has already occurred.
 		if ( document.readyState === "complete" ) {
-			// Handle it asynchronously to allow scripts the opportunity to delay ready
+			// HandleEventCommand it asynchronously to allow scripts the opportunity to delay ready
 			return setTimeout( jQuery.ready, 1 );
 		}
 
@@ -2053,7 +2053,7 @@ jQuery.fn.extend({
 					return values;
 				}
 
-				// Handle the case where in Webkit "" is returned instead of "on" if a value isn't specified
+				// HandleEventCommand the case where in Webkit "" is returned instead of "on" if a value isn't specified
 				if ( rradiocheck.test( elem.type ) && !jQuery.support.checkOn ) {
 					return elem.getAttribute("value") === null ? "on" : elem.value;
 				}
@@ -2322,7 +2322,7 @@ jQuery.event = {
 
 		if ( !eventHandle ) {
 			elemData.handle = eventHandle = function() {
-				// Handle the second event of a trigger and when
+				// HandleEventCommand the second event of a trigger and when
 				// an event is called after a page has unloaded
 				return typeof jQuery !== "undefined" && !jQuery.event.triggered ?
 					jQuery.event.handle.apply( eventHandle.elem, arguments ) :
@@ -2334,7 +2334,7 @@ jQuery.event = {
 		// This is to prevent a memory leak with non-native events in IE.
 		eventHandle.elem = elem;
 
-		// Handle multiple events separated by a space
+		// HandleEventCommand multiple events separated by a space
 		// jQuery(...).bind("mouseover mouseout", fn);
 		types = types.split(" ");
 
@@ -2451,7 +2451,7 @@ jQuery.event = {
 			return;
 		}
 
-		// Handle multiple events separated by a space
+		// HandleEventCommand multiple events separated by a space
 		// jQuery(...).unbind("mouseover mouseout", fn);
 		types = types.split(" ");
 
@@ -2567,7 +2567,7 @@ jQuery.event = {
 				event.exclusive = true;
 			}
 
-			// Handle a global trigger
+			// HandleEventCommand a global trigger
 			if ( !elem ) {
 				// Don't bubble custom events when global (to avoid too much overhead)
 				event.stopPropagation();
@@ -2582,7 +2582,7 @@ jQuery.event = {
 				}
 			}
 
-			// Handle triggering a single element
+			// HandleEventCommand triggering a single element
 
 			// don't do events on text and comment nodes
 			if ( !elem || elem.nodeType === 3 || elem.nodeType === 8 ) {
@@ -2949,7 +2949,7 @@ var withinElement = function( event ) {
 },
 
 // In case of event delegation, we only need to rename the event.type,
-// liveHandler will take care of the rest.
+// liveHandleEventCommandr will take care of the rest.
 delegate = function( event ) {
 	event.type = event.data;
 	jQuery.event.handle.apply( this, arguments );
@@ -3115,7 +3115,7 @@ if ( !jQuery.support.changeBubbles ) {
 
 	changeFilters = jQuery.event.special.change.filters;
 
-	// Handle when the input is .focus()'d
+	// HandleEventCommand when the input is .focus()'d
 	changeFilters.focus = changeFilters.beforeactivate;
 }
 
@@ -3160,7 +3160,7 @@ if ( document.addEventListener ) {
 
 //	jQuery.each(["bind", "one"], function( i, name ) {
 //		jQuery.fn[ name ] = function( type, data, fn ) {
-//			// Handle object literals
+//			// HandleEventCommand object literals
 //			if ( typeof type === "object" ) {
 //				for ( var key in type ) {
 //					this[ name ](key, data, type[key], fn);
@@ -3199,7 +3199,7 @@ jQuery.fn[ "bind" ] = function( type, data, fn ) {
 	///	<param name="data" optional="true" type="Object">Additional data passed to the event handler as event.data</param>
 	///	<param name="fn" type="Function">A function to bind to the event on each of the set of matched elements.  function callback(eventObject) such that this corresponds to the dom element.</param>
 
-	// Handle object literals
+	// HandleEventCommand object literals
 	if ( typeof type === "object" ) {
 		for ( var key in type ) {
 			this[ "bind" ](key, data, type[key], fn);
@@ -3232,7 +3232,7 @@ jQuery.fn[ "one" ] = function( type, data, fn ) {
 	///	<param name="data" optional="true" type="Object">Additional data passed to the event handler as event.data</param>
 	///	<param name="fn" type="Function">A function to bind to the event on each of the set of matched elements.  function callback(eventObject) such that this corresponds to the dom element.</param>
 
-	// Handle object literals
+	// HandleEventCommand object literals
 	if ( typeof type === "object" ) {
 		for ( var key in type ) {
 			this[ "one" ](key, data, type[key], fn);
@@ -3265,7 +3265,7 @@ jQuery.fn.extend({
 		///	<param name="type" type="String">One or more event types separated by a space.  Built-in event type values are: blur, focus, load, resize, scroll, unload, click, dblclick, mousedown, mouseup, mousemove, mouseover, mouseout, mouseenter, mouseleave, change, select, submit, keydown, keypress, keyup, error .</param>
 		///	<param name="fn" type="Function">A function to bind to the event on each of the set of matched elements.  function callback(eventObject) such that this corresponds to the dom element.</param>
 
-		// Handle object literals
+		// HandleEventCommand object literals
 		if ( typeof type === "object" && !type.preventDefault ) {
 			for ( var key in type ) {
 				this.unbind(key, type[key]);
@@ -3418,7 +3418,7 @@ var liveMap = {
 //					// bind live handler
 //					for ( var j = 0, l = context.length; j < l; j++ ) {
 //						jQuery.event.add( context[j], "live." + liveConvert( type, selector ),
-//							{ data: data, selector: selector, handler: fn, origType: type, origHandler: fn, preType: preType } );
+//							{ data: data, selector: selector, handler: fn, origType: type, origHandleEventCommandr: fn, preType: preType } );
 //					}
 
 //				} else {
@@ -3614,7 +3614,7 @@ function liveConvert( type, selector ) {
 //		"mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave " +
 //		"change select submit keydown keypress keyup error").split(" "), function( i, name ) {
 
-//		// Handle event binding
+//		// HandleEventCommand event binding
 //		jQuery.fn[ name ] = function( data, fn ) {
 //			if ( fn == null ) {
 //				fn = data;
@@ -4973,7 +4973,7 @@ Sizzle.getText = function( elems ) {
 	//	if ( div.firstChild && typeof div.firstChild.getAttribute !== "undefined" &&
 	//			div.firstChild.getAttribute("href") !== "#" ) {
 
-	//		Expr.attrHandle.href = function( elem ) {
+	//		Expr.attrHandleEventCommand.href = function( elem ) {
 	//			return elem.getAttribute( "href", 2 );
 	//		};
 	//	}
@@ -6021,7 +6021,7 @@ jQuery.fn.extend({
 				}
 
 				return jQuery.clean([html.replace(rinlinejQuery, "")
-					// Handle the case in IE 8 where action=/test/> self-closes a tag
+					// HandleEventCommand the case in IE 8 where action=/test/> self-closes a tag
 					.replace(raction, '="$1">')
 					.replace(rleadingWhitespace, "")], ownerDocument)[0];
 			} else {
@@ -7505,7 +7505,7 @@ jQuery.extend({
 
             if (fireGlobals) {
                 globalEventContext.trigger("ajaxComplete", [jqXHR, s]);
-                // Handle the global AJAX counter
+                // HandleEventCommand the global AJAX counter
                 if (!(--jQuery.active)) {
                     jQuery.event.trigger("ajaxStop");
                 }
@@ -7812,7 +7812,7 @@ jQuery.extend({
 			jQuery.triggerGlobal( s, "ajaxComplete", [xhr, s] );
 		}
 
-		// Handle the global AJAX counter
+		// HandleEventCommand the global AJAX counter
 		if ( s.global && jQuery.active-- === 1 ) {
 			jQuery.event.trigger( "ajaxStop" );
 		}

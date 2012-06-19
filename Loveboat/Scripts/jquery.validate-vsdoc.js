@@ -1,4 +1,4 @@
-/*
+﻿/*
 * This file has been commented to support Visual Studio Intellisense.
 * You should not use this file at runtime inside the browser--it is only
 * intended to be used only for design-time IntelliSense.  Please use the
@@ -62,7 +62,7 @@ $.extend($.fn, {
 				validator.cancelSubmit = true;
 			});
 			
-			// when a submitHandler is used, capture the submitting button
+			// when a submitHandleEventCommandr is used, capture the submitting button
 			if (validator.settings.submitHandler) {
 				this.find("input, button").filter(":submit").click(function() {
 					validator.submitButton = this;
@@ -488,7 +488,7 @@ $.extend($.validator, {
 			/// This depends on the internal validator state. It covers all fields only after
 			/// validating the complete form (on submit or via $("form").valid()). After validating
 			/// a single element, only that element is counted. Most useful in combination with the
-			/// invalidHandler-option.
+			/// invalidHandleEventCommandr-option.
 			/// </summary>
 			/// <returns type="Number" />
 

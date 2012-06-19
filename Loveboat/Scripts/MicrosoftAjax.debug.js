@@ -1801,7 +1801,7 @@ Sys.Observer._addEventHandler = function Sys$Observer$_addEventHandler(target, e
     Sys.Observer._getContext(target, true).events._addHandler(eventName, handler);
 }
 Sys.Observer.addEventHandler = function Sys$Observer$addEventHandler(target, eventName, handler) {
-    /// <summary locid="M:J#Sys.Observer.addEventHandler" />
+    /// <summary locid="M:J#Sys.Observer.addEventHandleEventCommandr" />
     /// <param name="target"></param>
     /// <param name="eventName" type="String"></param>
     /// <param name="handler" type="Function"></param>
@@ -1818,7 +1818,7 @@ Sys.Observer._removeEventHandler = function Sys$Observer$_removeEventHandler(tar
     Sys.Observer._getContext(target, true).events._removeHandler(eventName, handler);
 }
 Sys.Observer.removeEventHandler = function Sys$Observer$removeEventHandler(target, eventName, handler) {
-    /// <summary locid="M:J#Sys.Observer.removeEventHandler" />
+    /// <summary locid="M:J#Sys.Observer.removeEventHandleEventCommandr" />
     /// <param name="target"></param>
     /// <param name="eventName" type="String"></param>
     /// <param name="handler" type="Function"></param>
@@ -3442,7 +3442,7 @@ Sys.Serialization.JavaScriptSerializer.deserialize = function Sys$Serialization$
 Type.registerNamespace('Sys.UI');
  
 Sys.EventHandlerList = function Sys$EventHandlerList() {
-    /// <summary locid="M:J#Sys.EventHandlerList.#ctor" />
+    /// <summary locid="M:J#Sys.EventHandleEventCommandrList.#ctor" />
     if (arguments.length !== 0) throw Error.parameterCount();
     this._list = {};
 }
@@ -3450,7 +3450,7 @@ Sys.EventHandlerList = function Sys$EventHandlerList() {
         Array.add(this._getEvent(id, true), handler);
     }
     function Sys$EventHandlerList$addHandler(id, handler) {
-        /// <summary locid="M:J#Sys.EventHandlerList.addHandler" />
+        /// <summary locid="M:J#Sys.EventHandleEventCommandrList.addHandleEventCommandr" />
         /// <param name="id" type="String"></param>
         /// <param name="handler" type="Function"></param>
         var e = Function._validateParams(arguments, [
@@ -3466,7 +3466,7 @@ Sys.EventHandlerList = function Sys$EventHandlerList() {
         Array.remove(evt, handler);
     }
     function Sys$EventHandlerList$removeHandler(id, handler) {
-        /// <summary locid="M:J#Sys.EventHandlerList.removeHandler" />
+        /// <summary locid="M:J#Sys.EventHandleEventCommandrList.removeHandleEventCommandr" />
         /// <param name="id" type="String"></param>
         /// <param name="handler" type="Function"></param>
         var e = Function._validateParams(arguments, [
@@ -3477,7 +3477,7 @@ Sys.EventHandlerList = function Sys$EventHandlerList() {
         this._removeHandler(id, handler);
     }
     function Sys$EventHandlerList$getHandler(id) {
-        /// <summary locid="M:J#Sys.EventHandlerList.getHandler" />
+        /// <summary locid="M:J#Sys.EventHandleEventCommandrList.getHandleEventCommandr" />
         /// <param name="id" type="String"></param>
         /// <returns type="Function"></returns>
         var e = Function._validateParams(arguments, [
@@ -3508,7 +3508,7 @@ Sys.EventHandlerList.prototype = {
     getHandler: Sys$EventHandlerList$getHandler,
     _getEvent: Sys$EventHandlerList$_getEvent
 }
-Sys.EventHandlerList.registerClass('Sys.EventHandlerList');
+Sys.EventHandlerList.registerClass('Sys.EventHandleEventCommandrList');
 Sys.CommandEventArgs = function Sys$CommandEventArgs(commandName, commandArgument, commandSource) {
     /// <summary locid="M:J#Sys.CommandEventArgs.#ctor" />
     /// <param name="commandName" type="String"></param>
@@ -3621,7 +3621,7 @@ Sys.Component = function Sys$Component() {
     if (Sys.Application) Sys.Application.registerDisposableObject(this);
 }
     function Sys$Component$get_events() {
-        /// <value type="Sys.EventHandlerList" locid="P:J#Sys.Component.events"></value>
+        /// <value type="Sys.EventHandleEventCommandrList" locid="P:J#Sys.Component.events"></value>
         if (arguments.length !== 0) throw Error.parameterCount();
         if (!this._events) {
             this._events = new Sys.EventHandlerList();
@@ -4029,7 +4029,7 @@ Sys.UI.DomEvent.prototype = {
 }
 Sys.UI.DomEvent.registerClass('Sys.UI.DomEvent');
 var $addHandler = Sys.UI.DomEvent.addHandler = function Sys$UI$DomEvent$addHandler(element, eventName, handler, autoRemove) {
-    /// <summary locid="M:J#Sys.UI.DomEvent.addHandler" />
+    /// <summary locid="M:J#Sys.UI.DomEvent.addHandleEventCommandr" />
     /// <param name="element"></param>
     /// <param name="eventName" type="String"></param>
     /// <param name="handler" type="Function"></param>
@@ -4077,7 +4077,7 @@ var $addHandler = Sys.UI.DomEvent.addHandler = function Sys$UI$DomEvent$addHandl
     }
 }
 var $addHandlers = Sys.UI.DomEvent.addHandlers = function Sys$UI$DomEvent$addHandlers(element, events, handlerOwner, autoRemove) {
-    /// <summary locid="M:J#Sys.UI.DomEvent.addHandlers" />
+    /// <summary locid="M:J#Sys.UI.DomEvent.addHandleEventCommandrs" />
     /// <param name="element"></param>
     /// <param name="events" type="Object"></param>
     /// <param name="handlerOwner" optional="true"></param>
@@ -4100,7 +4100,7 @@ var $addHandlers = Sys.UI.DomEvent.addHandlers = function Sys$UI$DomEvent$addHan
     }
 }
 var $clearHandlers = Sys.UI.DomEvent.clearHandlers = function Sys$UI$DomEvent$clearHandlers(element) {
-    /// <summary locid="M:J#Sys.UI.DomEvent.clearHandlers" />
+    /// <summary locid="M:J#Sys.UI.DomEvent.clearHandleEventCommandrs" />
     /// <param name="element"></param>
     var e = Function._validateParams(arguments, [
         {name: "element"}
@@ -4136,7 +4136,7 @@ Sys.UI.DomEvent._disposeHandlers = function Sys$UI$DomEvent$_disposeHandlers() {
     }
 }
 var $removeHandler = Sys.UI.DomEvent.removeHandler = function Sys$UI$DomEvent$removeHandler(element, eventName, handler) {
-    /// <summary locid="M:J#Sys.UI.DomEvent.removeHandler" />
+    /// <summary locid="M:J#Sys.UI.DomEvent.removeHandleEventCommandr" />
     /// <param name="element"></param>
     /// <param name="eventName" type="String"></param>
     /// <param name="handler" type="Function"></param>
@@ -7032,7 +7032,7 @@ Sys.Res={
 'propertyUndefined':'\'{0}\' is not a property or an existing field.',
 'observableConflict':'Object already contains a member with the name \'{0}\'.',
 'historyCannotEnableHistory':'Cannot set enableHistory after initialization.',
-'eventHandlerInvalid':'Handler was not added through the Sys.UI.DomEvent.addHandler method.',
+'eventHandlerInvalid':'HandleEventCommandr was not added through the Sys.UI.DomEvent.addHandleEventCommandr method.',
 'scriptLoadFailedDebug':'The script \'{0}\' failed to load. Check for:\r\n Inaccessible path.\r\n Script errors. (IE) Enable \'Display a notification about every script error\' under advanced settings.',
 'propertyNotWritable':'\'{0}\' is not a writable property.',
 'enumInvalidValueName':'\'{0}\' is not a valid name for an enum value.',
@@ -7041,7 +7041,7 @@ Sys.Res={
 'cantAddNonFunctionhandler':'Can\'t add a handler that is not a function.',
 'invalidNameSpace':'Value is not a valid namespace identifier.',
 'notAnInterface':'Value is not a valid interface.',
-'eventHandlerNotFunction':'Handler must be a function.',
+'eventHandlerNotFunction':'HandleEventCommandr must be a function.',
 'propertyNotAnArray':'\'{0}\' is not an Array property.',
 'namespaceContainsClass':'Object {0} already exists as a class, enum, or interface.',
 'typeRegisteredTwice':'Type {0} has already been registered. The type may be defined multiple times or the script file that defines it may have already been loaded. A possible cause is a change of settings during a partial update.',
@@ -7091,7 +7091,7 @@ Sys.Res={
 'cannotDeserializeInvalidJson':'Cannot deserialize. The data does not correspond to valid JSON.',
 'invalidHttpVerb':'httpVerb cannot be set to an empty or null string.',
 'nullWebRequest':'Cannot call executeRequest with a null webRequest.',
-'eventHandlerInvalid':'Handler was not added through the Sys.UI.DomEvent.addHandler method.',
+'eventHandlerInvalid':'HandleEventCommandr was not added through the Sys.UI.DomEvent.addHandleEventCommandr method.',
 'cannotSerializeNonFiniteNumbers':'Cannot serialize non finite numbers.',
 'argumentUndefined':'Value cannot be undefined.',
 'webServiceInvalidReturnType':'The server method \'{0}\' returned an invalid type. Expected type: {1}',

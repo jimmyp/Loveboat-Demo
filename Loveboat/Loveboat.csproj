@@ -48,6 +48,7 @@
     <Reference Include="StructureMap">
       <HintPath>..\packages\structuremap.2.6.3\lib\StructureMap.dll</HintPath>
     </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
@@ -76,20 +77,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\StructuremapMvc.cs" />
+    <Compile Include="CommandHandlers\ArrivalCommandHandler.cs" />
+    <Compile Include="Events\ArrivedEvent.cs" />
+    <Compile Include="FakeDB.cs" />
+    <Compile Include="Events\IEvent.cs" />
+    <Compile Include="App_Start\Ship.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Commands\CommandProcessor.cs" />
+    <Compile Include="CommandProcessor.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Commands\ICommandHandler.cs" />
-    <Compile Include="Commands\ICommandProcessor.cs" />
+    <Compile Include="CommandHandlers\ICommandHandler.cs" />
+    <Compile Include="ICommandProcessor.cs" />
     <Compile Include="Models\IViewModelCache.cs" />
     <Compile Include="Controllers\ShipsController.cs" />
     <Compile Include="Models\ViewModelCache.cs" />
     <Compile Include="DependencyResolution\IoC.cs" />
     <Compile Include="DependencyResolution\SmDependencyResolver.cs" />
-    <Compile Include="Models\ArrivalCommand.cs" />
+    <Compile Include="Commands\ArrivalCommand.cs" />
     <Content Include="Models\LovweBoatViewModelCache.sql" />
     <Compile Include="Models\DatabaseSetup.cs" />
-    <Compile Include="Models\DepatureCommand.cs" />
+    <Compile Include="Commands\DepatureCommand.cs" />
     <Compile Include="Models\PetaPoco.cs" />
     <Compile Include="Models\ShipsViewModel.cs" />
     <Compile Include="Models\ShipViewModel.cs" />
@@ -169,6 +175,7 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Aggregates\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>

@@ -78,9 +78,9 @@ Sys.Mvc.FormContext = function Sys_Mvc_FormContext(formElement, validationSummar
     /// </field>
     /// <field name="_formValidationTag" type="String" static="true">
     /// </field>
-    /// <field name="_onClickHandler" type="Sys.UI.DomEventHandler">
+    /// <field name="_onClickHandleEventCommandr" type="Sys.UI.DomEventHandleEventCommandr">
     /// </field>
-    /// <field name="_onSubmitHandler" type="Sys.UI.DomEventHandler">
+    /// <field name="_onSubmitHandleEventCommandr" type="Sys.UI.DomEventHandleEventCommandr">
     /// </field>
     /// <field name="_errors" type="Array">
     /// </field>
@@ -348,13 +348,13 @@ Sys.Mvc.FieldContext = function Sys_Mvc_FieldContext(formContext) {
     /// </field>
     /// <field name="_validationMessageValidCss" type="String" static="true">
     /// </field>
-    /// <field name="_onBlurHandler" type="Sys.UI.DomEventHandler">
+    /// <field name="_onBlurHandleEventCommandr" type="Sys.UI.DomEventHandleEventCommandr">
     /// </field>
-    /// <field name="_onChangeHandler" type="Sys.UI.DomEventHandler">
+    /// <field name="_onChangeHandleEventCommandr" type="Sys.UI.DomEventHandleEventCommandr">
     /// </field>
-    /// <field name="_onInputHandler" type="Sys.UI.DomEventHandler">
+    /// <field name="_onInputHandleEventCommandr" type="Sys.UI.DomEventHandleEventCommandr">
     /// </field>
-    /// <field name="_onPropertyChangeHandler" type="Sys.UI.DomEventHandler">
+    /// <field name="_onPropertyChangeHandleEventCommandr" type="Sys.UI.DomEventHandleEventCommandr">
     /// </field>
     /// <field name="_errors" type="Array">
     /// </field>

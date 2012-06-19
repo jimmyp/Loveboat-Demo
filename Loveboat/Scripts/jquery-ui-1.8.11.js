@@ -4549,7 +4549,7 @@ $.widget( "ui.accordion", {
 	activate: function( index ) {
 		// TODO this gets called on init, changing the option without an explicit call for that
 		this.options.active = index;
-		// call clickHandler with custom event
+		// call clickHandleEventCommandr with custom event
 		var active = this._findActive( index )[ 0 ];
 		this._clickHandler( { target: active }, active );
 
@@ -8701,7 +8701,7 @@ $.extend(Datepicker.prototype, {
 		return (inst ? this._getDate(inst) : null);
 	},
 
-	/* Handle keystrokes. */
+	/* HandleEventCommand keystrokes. */
 	_doKeyDown: function(event) {
 		var inst = $.datepicker._getInst(event.target);
 		var handled = true;
@@ -9544,7 +9544,7 @@ $.extend(Datepicker.prototype, {
 		return this._daylightSavingAdjust(newDate);
 	},
 
-	/* Handle switch to/from daylight saving.
+	/* HandleEventCommand switch to/from daylight saving.
 	   Hours may be non-zero on daylight saving cut-over:
 	   > 12 when midnight changeover, but then cannot generate
 	   midnight datetime, so jump to 1AM, otherwise reset.

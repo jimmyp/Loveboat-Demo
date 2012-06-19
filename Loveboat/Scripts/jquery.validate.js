@@ -1,4 +1,4 @@
-/**
+﻿/**
 * Note: While Microsoft is not the author of this file, Microsoft is
 * offering you a license subject to the terms of the Microsoft Software
 * License Terms for Microsoft ASP.NET Model View Controller 3.
@@ -42,7 +42,7 @@ $.extend($.fn, {
 				validator.cancelSubmit = true;
 			});
 
-			// when a submitHandler is used, capture the submitting button
+			// when a submitHandleEventCommandr is used, capture the submitting button
 			if (validator.settings.submitHandler) {
 				this.find("input, button").filter(":submit").click(function() {
 					validator.submitButton = this;

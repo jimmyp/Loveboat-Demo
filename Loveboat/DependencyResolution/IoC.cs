@@ -1,5 +1,7 @@
+using Loveboat.CommandHandlers;
 using StructureMap;
-namespace Loveboat {
+
+namespace Loveboat.DependencyResolution {
     public static class IoC {
         public static IContainer Initialize() {
             ObjectFactory.Initialize(x =>
@@ -8,8 +10,8 @@ namespace Loveboat {
                                     {
                                         scan.TheCallingAssembly();
                                         scan.WithDefaultConventions();
+                                        scan.AddAllTypesOf(typeof(ICommandHandler<>));
                                     });
-            //                x.For<IExample>().Use<Example>();
                         });
             return ObjectFactory.Container;
         }

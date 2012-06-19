@@ -1,7 +1,8 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using Loveboat.Models;
 
-namespace Loveboat.Models
+namespace Loveboat.Commands
 {
     public class ArrivalCommand : ShipsViewModel
     {
@@ -10,5 +11,6 @@ namespace Loveboat.Models
 
         [Required]
         public string ArrivalPort { get; set; }
+
     }
 }
