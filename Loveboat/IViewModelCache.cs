@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Loveboat.Models
+namespace Loveboat
 {
     public interface IViewModelCache
     {

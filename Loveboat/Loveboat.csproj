@@ -76,20 +76,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EventHandlers\ArrivalEventHandler.cs" />
+    <Compile Include="EventHandlers\IEventHandler.cs" />
     <Compile Include="App_Start\StructuremapMvc.cs" />
     <Compile Include="CommandHandlers\ArrivalCommandHandler.cs" />
     <Compile Include="Events\ArrivedEvent.cs" />
-    <Compile Include="FakeDB.cs" />
+    <Compile Include="FakeEventStore.cs" />
     <Compile Include="Events\IEvent.cs" />
-    <Compile Include="App_Start\Ship.cs" />
+    <Compile Include="Aggregates\Ship.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="CommandProcessor.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="CommandHandlers\ICommandHandler.cs" />
     <Compile Include="ICommandProcessor.cs" />
-    <Compile Include="Models\IViewModelCache.cs" />
+    <Compile Include="EventProcessor.cs" />
+    <Compile Include="IViewModelCache.cs" />
     <Compile Include="Controllers\ShipsController.cs" />
-    <Compile Include="Models\ViewModelCache.cs" />
+    <Compile Include="ViewModelCache.cs" />
     <Compile Include="DependencyResolution\IoC.cs" />
     <Compile Include="DependencyResolution\SmDependencyResolver.cs" />
     <Compile Include="Commands\ArrivalCommand.cs" />
@@ -175,7 +178,6 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Aggregates\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>

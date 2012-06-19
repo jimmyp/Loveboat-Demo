@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Loveboat.Aggregates;
 using Loveboat.App_Start;
 using Loveboat.Commands;
 using Loveboat.Events;
@@ -29,11 +30,11 @@ namespace Loveboat.CommandHandlers
         private static IList<IEvent<Ship>> GetEventsFor(Guid id)
         {
             IList<IEvent<Ship>> events;
-            FakeDB.ShipEvents.TryGetValue(id, out events);
+            FakeEventStore.ShipEvents.TryGetValue(id, out events);
             if (events == null)
             {
                 events = new List<IEvent<Ship>>();
-                FakeDB.ShipEvents[id] = events;
+                FakeEventStore.ShipEvents[id] = events;
             }
             return events;
         }

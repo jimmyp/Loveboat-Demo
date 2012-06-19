@@ -1,4 +1,5 @@
 using System;
+using Loveboat.Aggregates;
 using Loveboat.App_Start;
 using Loveboat.Commands;
 

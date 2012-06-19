@@ -1,8 +1,7 @@
 using System.Collections.Generic;
-using Loveboat.Controllers;
 using PetaPoco;
 
-namespace Loveboat.Models
+namespace Loveboat
 {
     public class ViewModelCache : IViewModelCache
     {
