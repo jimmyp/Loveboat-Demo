@@ -1,5 +1,4 @@
-using Loveboat.CommandHandlers;
-using Loveboat.EventHandlers;
+
 using StructureMap;
 
 namespace Loveboat.DependencyResolution {
@@ -11,8 +10,6 @@ namespace Loveboat.DependencyResolution {
                                     {
                                         scan.TheCallingAssembly();
                                         scan.WithDefaultConventions();
-                                        scan.AddAllTypesOf(typeof(ICommandHandler<>));
-                                        scan.AddAllTypesOf(typeof(IEventHandler<>));
                                     });
                         });
             return ObjectFactory.Container;

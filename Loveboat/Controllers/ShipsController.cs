@@ -1,20 +1,23 @@
 ﻿using System;
 using System.Web.Mvc;
-using Loveboat.Commands;
-using Loveboat.Models;
+using Loveboat.Messages.Commands;
+using Loveboat.ViewModelCache;
+using Loveboat.ViewModels;
+using NServiceBus;
 
 namespace Loveboat.Controllers
 {
     public class ShipsController : Controller
     {
         private readonly IViewModelCache viewModelCache;
-        private readonly ICommandProcessor commandProcessor;
+        private readonly IBus bus;
 
-        public ShipsController(IViewModelCache viewModelCache, ICommandProcessor commandProcessor)
+        public ShipsController(IViewModelCache viewModelCache, IBus bus)
         {
             if (viewModelCache == null) throw new ArgumentNullException("viewModelCache");
+            if (bus == null) throw new ArgumentNullException("bus");
             this.viewModelCache = viewModelCache;
-            this.commandProcessor = commandProcessor;
+            this.bus = bus;
         }
 
         [HttpGet]
@@ -30,7 +33,7 @@ namespace Loveboat.Controllers
             if (!ModelState.IsValid)
                 return Index();
 
-            commandProcessor.Process(command);
+            bus.Send(command);
 
             return RedirectToAction("Index");
         }
