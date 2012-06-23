@@ -1,5 +1,6 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
+using NServiceBus;
 
 namespace Loveboat
 {
@@ -31,6 +32,18 @@ namespace Loveboat
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
+
+            NServiceBus.Configure.With()
+                .Log4Net()
+                .StructureMapBuilder()
+                .XmlSerializer()
+                .MsmqTransport()
+                    .IsTransactional(false)
+                    .PurgeOnStartup(false)
+                .UnicastBus()
+                    .ImpersonateSender(false)
+                .CreateBus()
+                .Start();
         }
     }
 }

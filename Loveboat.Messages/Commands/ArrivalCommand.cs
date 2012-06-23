@@ -1,6 +1,6 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using Loveboat.ViewModels;
-using Microsoft.Build.Framework;
 using NServiceBus;
 
 namespace Loveboat.Messages.Commands

@@ -15,28 +15,30 @@ namespace Loveboat.Domain
 
         protected string CurrentLocation;
 
-        public void HandleCommand(ArrivalCommand arrivalCommand)
+        public void HandleCommand(DepatureCommand command)
+        {
+            if (CurrentLocation == "At Sea")
+                throw new ApplicationException();
+
+            ApplyChange(new DepartedEvent(command));
+        }
+
+        public void HandleCommand(ArrivalCommand command)
         {
             if (CurrentLocation != "At Sea")
                 throw new ApplicationException();
 
-            ApplyChange(new ArrivedEvent(arrivalCommand));
+            ApplyChange(new ArrivedEvent(command));
         }
 
         public void HandleEvent(ArrivedEvent arrivedEvent)
         {
-            if (CurrentLocation != "At Sea")
-                throw new ApplicationException();
-
             CurrentLocation = arrivedEvent.ArrivalPort;
         }
 
         public void HandleEvent(DepartedEvent departedEvent)
         {
-            if (CurrentLocation == "At Sea")
-                throw new ApplicationException();
-
             CurrentLocation = "At Sea";
-        }
+        }      
     }
 }

@@ -4,11 +4,11 @@ using NServiceBus;
 
 namespace Loveboat.Domain
 {
-    public class Repository<T> : IRepository<T> where T : AggregateBase, new()
+    public abstract class Repository<T> : IRepository<T> where T : AggregateBase, new()
     {
         private readonly IBus bus;
 
-        public Repository(IBus bus)
+        protected Repository(IBus bus)
         {
             if (bus == null) throw new ArgumentNullException("bus");
             this.bus = bus;
@@ -18,7 +18,7 @@ namespace Loveboat.Domain
         {
             var aggregate = new T();
             var eventsForAggreate = GetEventsFor(id);
-            aggregate.LoadFromEvents(eventsForAggreate);
+            aggregate.LoadFromEvents(id, eventsForAggreate);
             return aggregate;
         }
 

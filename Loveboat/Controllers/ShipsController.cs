@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Web.Mvc;
 using Loveboat.Messages.Commands;
 using Loveboat.ViewModelCache;
@@ -25,29 +26,38 @@ namespace Loveboat.Controllers
         {
             var ships = viewModelCache.GetAll<ShipViewModel>();
             var model = new ShipsViewModel() {Ships = ships};
+
+            var fake = (ShipViewModel)TempData["Fake"];
+            if(fake!=null)
+                model.Ships.First(s => s.Id == fake.Id).Location = fake.Location;
+
             return View("Index", model);
         }
 
-        private ActionResult Process<T>(T command)
+        [HttpPost]
+        public ActionResult Arrive(ArrivalCommand command)
         {
             if (!ModelState.IsValid)
                 return Index();
 
             bus.Send(command);
 
-            return RedirectToAction("Index");
-        }
+            TempData["Fake"] = new ShipViewModel() {Id = command.ArrivingShipId, Location = command.ArrivalPort};
 
-        [HttpPost]
-        public ActionResult Arrive(ArrivalCommand command)
-        {
-            return Process(command);
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
         public ActionResult Depart(DepatureCommand command)
         {
-            return Process(command);
+            if (!ModelState.IsValid)
+                return Index();
+
+            bus.Send(command);
+
+            TempData["Fake"] = new ShipViewModel() { Id = command.DepartingShipId, Location = "At Sea" };
+
+            return RedirectToAction("Index");
         }
     }
 }

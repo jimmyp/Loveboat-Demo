@@ -16,7 +16,9 @@ namespace Loveboat.Domain
             
             foreach (var shipViewModel in shipViewModels)
             {
-                if (Events[shipViewModel.Id] == null) Events[shipViewModel.Id] = new List<IEvent>(); 
+                IList<IEvent> aggregateEvents;
+                Events.TryGetValue(shipViewModel.Id, out aggregateEvents);
+                if (aggregateEvents == null) Events[shipViewModel.Id] = new List<IEvent>(); 
 
                 if (shipViewModel.Location == "At Sea")
                     Events[shipViewModel.Id].Add(new DepartedEvent(shipViewModel.Id));

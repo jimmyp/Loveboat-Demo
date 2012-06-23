@@ -1,4 +1,5 @@
 ﻿using System;
+using Loveboat.Messages.Commands;
 using NServiceBus;
 
 namespace Loveboat.Messages.Events
@@ -8,6 +9,11 @@ namespace Loveboat.Messages.Events
         public DepartedEvent(Guid id)
         {
             Id = id;
+        }
+
+        public DepartedEvent(DepatureCommand command)
+        {
+            Id = command.DepartingShipId;
         }
 
         public Guid Id { get; set; }

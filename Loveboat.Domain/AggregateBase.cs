@@ -8,10 +8,11 @@ namespace Loveboat.Domain
     {
         public IList<IEvent> UncommitedEvents;
 
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
 
-        public void LoadFromEvents(IEnumerable<IEvent> eventsForAggreate)
+        public void LoadFromEvents(Guid id, IEnumerable<IEvent> eventsForAggreate)
         {
+            Id = id;
             foreach (var @event in eventsForAggreate)
                 ApplyChange(@event, false);
         }
@@ -23,7 +24,7 @@ namespace Loveboat.Domain
 
         private void ApplyChange(IEvent @event, bool isNew)
         {
-            this.AsDynamic().Apply(@event);
+            this.AsDynamic().HandleEvent(@event);
             if (isNew) UncommitedEvents.Add(@event);
         }
     }
