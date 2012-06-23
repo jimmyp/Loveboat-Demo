@@ -4,7 +4,7 @@ using Loveboat.Messages.Commands;
 using Loveboat.Messages.Events;
 using NServiceBus;
 
-namespace Loveboat.Domain
+namespace Loveboat.Domain.Aggregates.Ship
 {
     public class ShipAggregate : AggregateBase
     {

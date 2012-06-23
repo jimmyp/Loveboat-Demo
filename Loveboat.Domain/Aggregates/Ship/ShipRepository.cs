@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Loveboat.Domain.Infrastructure;
 using NServiceBus;
 
-namespace Loveboat.Domain
+namespace Loveboat.Domain.Aggregates.Ship
 {
     public class ShipRepository : Repository<ShipAggregate>, IShipRepository
     {

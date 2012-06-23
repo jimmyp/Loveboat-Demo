@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
+using Loveboat.Domain.Aggregates;
 using NServiceBus;
 
-namespace Loveboat.Domain
+namespace Loveboat.Domain.Infrastructure
 {
     public abstract class Repository<T> : IRepository<T> where T : AggregateBase, new()
     {

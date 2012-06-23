@@ -1,7 +1,7 @@
 ﻿using NServiceBus;
 using StructureMap;
 
-namespace Loveboat.Domain
+namespace Loveboat.Domain.Infrastructure
 {
     public class EndpointConfig :IConfigureThisEndpoint, AsA_Publisher, IWantCustomInitialization
     {

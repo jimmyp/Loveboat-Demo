@@ -1,4 +1,6 @@
 using System;
+using Loveboat.Domain.Aggregates;
+using Loveboat.Domain.Aggregates.Ship;
 
 namespace Loveboat.Domain
 {

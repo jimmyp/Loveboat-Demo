@@ -4,7 +4,7 @@ using Loveboat.Messages.Events;
 using Loveboat.ViewModels;
 using NServiceBus;
 
-namespace Loveboat.Domain
+namespace Loveboat.Domain.Infrastructure
 {
     public class FakeEventStore
     {

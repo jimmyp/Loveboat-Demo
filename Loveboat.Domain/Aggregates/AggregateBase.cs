@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
+using Loveboat.Domain.Infrastructure;
 using NServiceBus;
 
-namespace Loveboat.Domain
+namespace Loveboat.Domain.Aggregates
 {
     public class AggregateBase
     {

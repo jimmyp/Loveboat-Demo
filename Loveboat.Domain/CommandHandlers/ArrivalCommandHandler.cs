@@ -1,7 +1,7 @@
 ﻿using Loveboat.Messages.Commands;
 using NServiceBus;
 
-namespace Loveboat.Domain
+namespace Loveboat.Domain.CommandHandlers
 {
     public class ArrivalCommandHandler : IHandleMessages<ArrivalCommand>
     {

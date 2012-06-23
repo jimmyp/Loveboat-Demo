@@ -58,18 +58,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AggregateBase.cs" />
-    <Compile Include="ALittleBitOfDynamicMagic.cs" />
-    <Compile Include="DepartureCommandHandler.cs" />
-    <Compile Include="EndpointConfig.cs" />
-    <Compile Include="EventsForAggreate.cs" />
-    <Compile Include="IRepository.cs" />
-    <Compile Include="Repository.cs" />
-    <Compile Include="ShipAggregate.cs" />
-    <Compile Include="ArrivalCommandHandler.cs" />
-    <Compile Include="FakeEventStore.cs" />
+    <Compile Include="Aggregates\AggregateBase.cs" />
+    <Compile Include="Infrastructure\Hidden Magic\ALittleBitOfDynamicMagic.cs" />
+    <Compile Include="CommandHandlers\DepartureCommandHandler.cs" />
+    <Compile Include="Infrastructure\Hidden Magic\EndpointConfig.cs" />
+    <Compile Include="Infrastructure\IRepository.cs" />
+    <Compile Include="Infrastructure\Repository.cs" />
+    <Compile Include="Aggregates\Ship\ShipAggregate.cs" />
+    <Compile Include="CommandHandlers\ArrivalCommandHandler.cs" />
+    <Compile Include="Infrastructure\Hidden Magic\FakeEventStore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShipRepository.cs" />
+    <Compile Include="Aggregates\Ship\ShipRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Loveboat.Messages\Loveboat.Messages.csproj">
